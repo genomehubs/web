@@ -210,6 +210,8 @@ span.smooth {
   width:20vw;
   height:20vw;
   background-size: contain;
+  background-position:top;
+  background-repeat: no-repeat;
 }
 
 .read-more {
