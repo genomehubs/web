@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GenomeHubs</title>
+    <link href="//fonts.googleapis.com/css?family=Comfortaa|Pontano+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/functions.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <ul>
+        <li><a href="#genomehubs" class="page1">GenomeHubs</a>
+        </li><li><a href="#lepbase" class="page2">Lepbase</a>
+        </li><li><a href="#cgp" class="page3">CGP</a>
+        </li><li><a href="#docs" class="page4">Documentation</a>
+        </li><li><a href="blog" class="page7">Blog</a></li>
+      </ul>
+    </nav>
+
+    <content>
+      <div id="page1" class="page">
+        <span id="genomehubs" class="smooth"></span>
+        <div class="square">
+          <h1>GenomeHubs</h1>
+          <p>
+            GenomeHubs have been developed as part of the <a href="#lepbase">LepBase</a>
+            project to provide a simple and scalable way to deploy an
+            <a href="http://www.ensembl.org">Ensembl</a> genome browser and associated
+            tools for clades or communities of non-model organisms.
+          </p>
+          <p>Challis RJ, Kumar S, Stevens L &amp; Blaxter M (2017) GenomeHubs: Simple
+            containerised setup of a custom Ensembl database and web server for any species.
+            Database, 2017:bax039 <a href="https://doi.org/10.1093/database/bax039">doi:10.1093/database/bax039</a>
+          </p>
+
+          <h2 id="current-genomehubs">Current GenomeHubs</h2>
+          <ul class="hublist">
+            <li><img src="assets/lepbase.png" alt="lepbase">
+              <a href="http://lepbase.org">lepbase.org</a> - the lepidopteran genome database
+            </li>
+            <li><img src="assets/cgp.png" alt="cgp">
+              <a href="http://caenorhabditis.org">caenorhabditis.org</a> - an Ensembl for the Caenorhabditis Genomes Project which aims to sequence all species in the genus <em>Caenorhabditis</em>
+            </li>
+            <li><img src="assets/tardibase.png" alt="tardibase">
+              <a href="http://ensembl.tardigrades.org">ensembl.tardigrades.org</a> - an Ensembl to support collaboration on tardigrade genome sequencing
+            </li>
+            <li><img src="assets/ngenomes.png" alt="ngenomes">
+              <a href="http://ensembl.ngenomes.org">ensembl.ngenomes.org</a> - a selection of recent genome assemblies from the Blaxter Lab
+            </li>
+            <li><img src="assets/mealybugbase.png" alt="mealybugbase">
+              <a href="http://ensembl.mealybug.org">ensembl.mealybug.org</a> - a model system for host-symbiont interaction
+            </li>
+          </ul>
+          <h2 id="coming-soon-">Coming soon...</h2>
+          <ul>
+            <li>MolluscDB</li>
+          </ul>
+          <h2 id="connected-genomehubs">Connected GenomeHubs</h2>
+          <p>
+            <img src="assets/genomehubs-logo-multi.png" style="width:16em;float:right;margin-left:1em" alt="Linking GenomeHubs">
+          </p>
+          <p>
+            As more taxa are included in Ensembl genome browsers through GenomeHubs, individual
+            hubs will increasingly be linked by shared taxa, whether included as focal species,
+            reference assemblies or outgroups. By including shared taxa in comparative analyses
+            (gene trees and whole genome alignments) run and imported into the Ensembl compara
+            database format using GenomeHubs containers, a network of GenomeHubs will provide a
+            substantial resource for comparative analyses. Having the data in a standardised format
+            and accessible through the Ensembl API will open up opportunities to discover
+            phylogenetically independent contrasts and to test hypotheses developed in a single clade
+            by running the same API scripts on additional clades for which suitable data are available.
+          </p>
+        </div>
+      </div>
+
+      <div id="page2" class="page">
+        <span id="lepbase" class="smooth"></span>
+
+        <div class="sticky-case">
+          <div class="sticky inside" style="background-image: url('assets/lepbase-ensembl.png');">
+          </div>
+          <div class="square lepbase">
+            <div class="padded">
+              <h1>Lepbase</h1>
+              <p>
+                Our flagship site provides a home for Lepidopteran genome assemblies.
+              </p>
+              <p>
+                visit <a href="http://lepbase.org">lepbase.org</a> to find out more or go
+                straight to the <a href="http://ensembl.lepbase.org">LepBase Ensembl</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="page3" class="page">
+        <span id="cgp" class="smooth"></span>
+        <div class="sticky-case">
+          <div class="sticky inside" style="background-image: url('assets/cgp-home.png');">
+          </div>
+          <div class="square cgp">
+            <div class="padded">
+              <h1>Caenorhabditis Genomes Project</h1>
+              <p>
+                A project to sequence all the species in the genus </em>Caenorhabditis</em>.
+              </p>
+              <p>
+                visit <a href="http://caenorhabditis.org">caenorhabditis.org</a> to find out more or go
+                straight to the <a href="http://ensembl.caenorhabditis.org">CGP Ensembl</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page4" class="page">
+        <span id="docs" class="smooth"></span>
+        <div class="sticky-case">
+          <div class="sticky inside" style="background-image: url('assets/containers.png');background-color: white;">
+          </div>
+          <div class="square docs">
+            <div class="padded">
+              <h1>Documentation</h1>
+              <p>
+                Documentation for GenomeHubs setup and configuration is available at
+                <a href="https://genomehubs.gitbooks.io/genomehubs/content/">genomehubs.gitbooks.io</a>.
+              </p>
+              <p>
+                A more general description is available in our paper in Database:
+                <br/>
+                Challis RJ, Kumar S, Stevens L &amp; Blaxter M (2017) GenomeHubs: Simple containerised
+                setup of a custom Ensembl database and web server for any species. Database, 2017:bax039
+                <a href="https://doi.org/10.1093/database/bax039">doi:10.1093/database/bax039</a>
+              </p>
+              <p>
+                For a detailed description of the EasyImport scripts used to import new assemblies
+                from FASTA and GFF, see our documentation on
+                <a href="http://easy-import.readme.io">readme.io</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Template
+      <div id="page4" class="page">
+        <span id="template" class="smooth"></span>
+        <div class="square">
+          <h1></h1>
+          <p>
+          </p>
+        </div>
+      </div>
+-->
+
+    </content>
+
+  </body>
+</html>
