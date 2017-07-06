@@ -1,7 +1,9 @@
 var fs = require('fs');
-var md = require( "markdown" ).markdown
+var marked = require('marked')
 
 var md_path = 'public/markdown';
+
+var latest = [];
 
 var meta = {}
 meta.path = '../../../';
@@ -20,10 +22,21 @@ meta.nav = [
   ['#lepbase','LepBase','page2'],
   ['#cgp','CGP','page3'],
   ['#docs','Documentation','page4'],
-  ['#blog','Blog','page5']
+  ['#blog','Blog','page5 active']
 ];
 
-readFiles(md_path);
+readFiles(md_path,showLatest);
+
+function showLatest(){
+  var text = '';
+  latest.forEach(function(post){
+    text = text + '<div class="post">\n';
+    text = text + '<h2>'+post.title+'</h2>\n';
+    text = text + marked(post.stub);
+    text = text + '</div>\n'
+  });
+  fs.writeFileSync('public/blog/latest.html',text);
+}
 
 function mkdirUnless (path) {
   try {
@@ -34,7 +47,7 @@ function mkdirUnless (path) {
   }
 }
 
-function readFiles (path) {
+function readFiles (path,callback) {
   mkdirUnless(path.replace('/markdown','/blog'));
   fs.readdir(path,function(err, files){
     if (err) {
@@ -49,6 +62,7 @@ function readFiles (path) {
       }
     });
   });
+  if (callback) setTimeout(callback,2000);
 }
 
 function md2html (md_file){
@@ -68,12 +82,20 @@ function md2html (md_file){
     }
   })
   meta.day = meta.created.match(/(\d+)$/)[1];
-  // parse the markdown into a tree
-  var tree = md.parse( text );
+  var ht_link = ht_file.replace('public/','').replace(/\.html$/,'')
+  var short_text = text.replace(/\[\]\(\)[\s\S]*/,' [read more&hellip;]('+ht_link+')');
 
-  // convert the tree into html
-  var html = md.renderJsonML( md.toHTMLTree( tree ) );
+  if (!latest[0] || meta.created > latest[latest.length-1].created){
+    if (latest.length > 3) latest.pop();
+    latest.push({"created":meta.created,"stub":short_text,"title":meta.title});
+    latest.sort(function(a,b){
+      if(a.created > b.created) return -1;
+      if(a.created < b.created) return 1;
+      return 0;
+    })
+  }
 
+  var html = marked(text);
   var page = wrapHtml(meta,html);
   fs.writeFileSync(ht_file,page);
 }
@@ -96,7 +118,7 @@ function wrapHtml (meta,html) {
   })
   string = string + '\n</ul>\n</nav>\n';
 
-  string = string + '<content>\n<div id="page5" class="page">\n';
+  string = string + '<content class="page5">\n<div id="page5" class="page">\n';
   string = string + '<span id="blog" class="smooth"></span>\n';
   string = string + '<div id="blog-posts" class="square">\n';
   string = string + '<h1>'+meta.title+'</h1>\n';

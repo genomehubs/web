@@ -6,7 +6,7 @@ created: 2017-06-28
 The [BlobToolKit](http://blobtoolkit.genomehubs.org) project has been funded by the BBSRC for 3 years to
 develop the latest iteration of the Blobology/Blobtools genome assembly QC, visualisation
 and filtering tools. The project is a collaboration between the research groups
-of Mark Blaxter at the University of Edinburgh and Guy Cochrane at EMBL-EBI<span class="read-more" rel="2017/06"/> to develop
+of Mark Blaxter at the University of Edinburgh and Guy Cochrane at EMBL-EBI[]() to develop
 software tools and protocols to aid in the separation of cobionts and removal of
 contaminants from genomic datasets prior to genome sequence assembly.
 

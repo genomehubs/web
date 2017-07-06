@@ -17,7 +17,8 @@ var months = {
 $(document).ready(function(){
 
   // load latest n blog posts
-  var $blog = $('#blog-posts');
+  $('#latest-posts').load('blog/latest.html')
+/*  var $blog = $('#blog-posts');
   var prev_month = '';
   Object.keys(blog).sort().reverse().forEach(function(year){
     Object.keys(blog[year]).sort().reverse().forEach(function(month){
@@ -37,7 +38,7 @@ $(document).ready(function(){
         }
       })
     })
-  })
+  })*/
 
 	$('a[href^="#"]').on('click',function (e) {
     e.preventDefault();
