@@ -1,6 +1,6 @@
 html,body {
   position:absolute;
-  font-family:'Pontano Sans', sans-serif;
+  font-family:'Open Sans', sans-serif;
   font-size:16px;
   line-height:1.8em;
   padding:0;
@@ -69,6 +69,7 @@ content {
   position: inherit;
   top:2.5em;
   width: 100%;
+  background-color:#555555;
   color:white;
   transition:background-color 1.2s, color 1s;
 }
@@ -143,13 +144,19 @@ span.smooth {
   visibility:hidden;
 }
 
+.hidden {
+  display:none;
+  visibility:hidden;
+}
+
 .square {
   width:85vw;
+  max-width:800px;
   background-color:rgba(0,0,0,0.0);
   position: relative;
   margin:0 auto;
   font-size:20px;
-  z-index:5px;
+  z-index:5;
 }
 
 .sticky-case {
@@ -192,6 +199,7 @@ span.smooth {
 .sticky.inside {
   height:calc(100vh - 4.5em);
   width:85vw;
+  max-width:800px;
   background-size: cover;
   background-position:top left;
   background-repeat: no-repeat;
@@ -213,6 +221,38 @@ span.smooth {
   background-size: contain;
   background-position:top left;
   background-repeat: no-repeat;
+}
+
+.sticky.menu {
+  width:2em;
+  height:50vh;
+  margin-top:8em;
+  float:right;
+  overflow:hidden;
+  background-color:#555;
+  z-index:10;
+}
+
+.sticky.menu:hover {
+  overflow:visible;
+}
+
+.menu-holder {
+  position:absolute;
+  right:0;
+  top:0;
+  width:2em;
+  height:100%;
+  background-color:white;
+}
+
+.menu-holder {
+  position:absolute;
+  right:0;
+  top:0;
+  width:20vw;
+  height:100%;
+  background-color:white;
 }
 
 .read-more {
@@ -252,9 +292,29 @@ ul.hublist li img {
 	float:none;
 }
 
+.post {
+  margin-bottom: 5em;
+}
+
+.post:after {
+    content: '';
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    left: 0;
+}
 
 @media screen and (orientation:portrait) {
     .sticky.inside {
       background-size: contain;
+    }
+}
+
+@media (min-height:800px) {
+    .sticky.inside {
+      background-size: contain;
+      max-height: 600px;
     }
 }
