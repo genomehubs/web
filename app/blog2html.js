@@ -9,16 +9,15 @@ var meta = {}
 meta.path = '../../../';
 meta.css = [
   '//fonts.googleapis.com/css?family=Comfortaa|Open+Sans',
-  'css/styles.css'
+  'css/styles.css',
+  'css/custom.css'
 ];
 meta.js = [
-  'js/jquery.min.js',
-  'js/Markdown.Converter.js',
-  'js/posts.js',
+  '//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js',
   'js/functions.js'
 ];
 meta.nav = [
-  ['#genomehubs','GenomeHubs','page1'],
+  [meta.path,'GenomeHubs','page1'],
   ['#lepbase','LepBase','page2'],
   ['#cgp','CGP','page3'],
   ['#docs','Documentation','page4'],
@@ -77,7 +76,6 @@ function md2html (md_file){
       meta[tmp[0]] = tmp[1];
     }
     else {
-  //    text = text.replace('[]()',' [read more…]('+ht_dir+'/'+year+'/'+month+'/'+ht_file+')');
       text = text + '\n' + line;
     }
   })
