@@ -21,7 +21,8 @@ meta.nav = [
   ['#lepbase','LepBase','page2'],
   ['#cgp','CGP','page3'],
   ['#docs','Documentation','page4'],
-  ['#blog','Blog','page5 active']
+  ['#blog','Blog','page5 active'],
+  ['http://blobtoolkit.genomehubs.org','BlobToolKit','']
 ];
 
 readFiles(md_path,showLatest);
